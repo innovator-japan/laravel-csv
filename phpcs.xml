@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="Custom_PSR2">
+  <description>Custom ruleset Based on PSR2</description>
+  <rule ref="PSR2" />
+
+  <arg name="extensions" value="php" />
+  <arg name="colors" />
+  <arg value="sp" />
+</ruleset>
