@@ -11,7 +11,7 @@
 >
     <testsuites>
         <testsuite name="Laravel CSV Test Suite">
-            <directory suffix=".php">./tests</directory>
+            <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
     <filter>
