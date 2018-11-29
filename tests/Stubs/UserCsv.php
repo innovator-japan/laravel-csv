@@ -5,28 +5,22 @@ declare(strict_types=1);
 namespace InnovatorJapan\LaravelCsv\Tests\Stubs;
 
 use Illuminate\Database\Query\Builder;
-use InnovatorJapan\LaravelCsv\Contracts\ExportedData;
-use InnovatorJapan\LaravelCsv\Exportable;
+use InnovatorJapan\LaravelCsv\AbstractCsv;
 use InnovatorJapan\LaravelCsv\Tests\Stubs\Database\User;
 
-class Exporter implements ExportedData
+class UserCsv extends AbstractCsv
 {
-    use Exportable;
+    /**
+     * {@inheritdoc}
+     */
+    protected $chunkCount = 10;
 
     /**
      * {@inheritdoc}
      */
     public function query(): Builder
     {
-        return User::query()->getQuery();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function chunkCount(): int
-    {
-        return 1000;
+        return User::orderBy('id')->getQuery();
     }
 
     /**
@@ -34,6 +28,10 @@ class Exporter implements ExportedData
      */
     public function format($record): array
     {
-        return (array)$record;
+        return [
+            $record->id,
+            $record->name,
+            $record->email,
+        ];
     }
 }

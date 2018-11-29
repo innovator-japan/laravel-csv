@@ -6,7 +6,7 @@ namespace InnovatorJapan\LaravelCsv\Tests\Stubs;
 
 use Illuminate\Database\Query\Builder;
 use InnovatorJapan\LaravelCsv\AbstractCsv;
-use InnovatorJapan\LaravelCsv\Tests\Stubs\User;
+use InnovatorJapan\LaravelCsv\Tests\Stubs\Database\User;
 
 class MinimumCsv extends AbstractCsv
 {

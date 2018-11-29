@@ -6,9 +6,9 @@ namespace InnovatorJapan\LaravelCsv\Tests\Stubs;
 
 use Illuminate\Database\Query\Builder;
 use InnovatorJapan\LaravelCsv\AbstractCsv;
-use InnovatorJapan\LaravelCsv\Tests\Stubs\User;
+use InnovatorJapan\LaravelCsv\Tests\Stubs\Database\User;
 
-class Csv extends AbstractCsv
+class OverrideCsv extends AbstractCsv
 {
     /**
      * {@inheritdoc}
@@ -20,7 +20,7 @@ class Csv extends AbstractCsv
      */
     public function query(): Builder
     {
-        return User::query()->getQuery();
+        return User::orderBy('id')->getQuery();
     }
 
     /**
