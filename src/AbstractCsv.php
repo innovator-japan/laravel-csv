@@ -2,31 +2,32 @@
 
 declare(strict_types=1);
 
-namespace InnovatorJapan\LaravelCsv\Tests\Stubs;
+namespace InnovatorJapan\LaravelCsv;
 
 use Illuminate\Database\Query\Builder;
 use InnovatorJapan\LaravelCsv\Contracts\ExportedData;
-use InnovatorJapan\LaravelCsv\Exportable;
-use InnovatorJapan\LaravelCsv\Tests\Stubs\User;
 
-class Exporter implements ExportedData
+/**
+ * Class Csv
+ */
+abstract class AbstractCsv implements ExportedData
 {
-    use Exportable;
+    /**
+     * @var int
+     */
+    protected $chunkCount = 1000;
 
     /**
      * {@inheritdoc}
      */
-    public function query(): Builder
-    {
-        return User::query()->getQuery();
-    }
+    abstract public function query(): Builder;
 
     /**
      * {@inheritdoc}
      */
     public function chunkCount(): int
     {
-        return 1000;
+        return $this->chunkCount;
     }
 
     /**
