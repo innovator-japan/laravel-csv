@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace InnovatorJapan\LaravelCsv;
 
-use InnovatorJapan\LaravelCsv\Csv;
+use InnovatorJapan\LaravelCsv\Exporter;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /**
@@ -20,6 +20,6 @@ trait Exportable
      */
     public function download(string $filename = 'export.csv'): StreamedResponse
     {
-        return app(Csv::class)->download($this, $filename);
+        return app(Exporter::class)->download($this, $filename);
     }
 }
