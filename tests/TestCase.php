@@ -18,4 +18,16 @@ class TestCase extends OrchestraTestCase
             CsvServiceProvider::class,
         ];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getEnvironmentSetUp($app)
+    {
+        $app['config']->set('database.default', 'test');
+        $app['config']->set('database.connections.test', [
+            'driver' => 'sqlite',
+            'database' => ':memory:',
+        ]);
+    }
 }
