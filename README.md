@@ -20,7 +20,45 @@ $ composer require innovator-japan/laravel-csv
 ```
 
 ## Usage
-To be written...
+### Exporting a database table as a CSV
+1️⃣ First of all, Create this class.
+```php
+<?php
+
+namespace App\Export;
+
+use App\User;
+use Illuminate\Database\Query\Builder;
+use InnovatorJapan\LaravelCsv\AbstractCsv;
+use InnovatorJapan\LaravelCsv\Exportable;
+
+class UserCsv extends AbstractCsv
+{
+    use Exportable;
+
+    public function query(): Builder
+    {
+        return User::latest()->getQuery();
+    }
+}
+```
+
+2️⃣ Then you will be able to download it.
+```php
+use App\Export\UserCsv;
+use App\Http\Controllers\Controller;
+
+class UserController extends Controller
+{
+    public function export()
+    {
+        return (new UserCsv())->download('user.csv');
+    }
+}
+```
+
+### Importing CSV records into a database table
+Comming soon...
 
 ## Maintainers
 [Innovator Japan Inc.](https://github.com/innovator-japan)
