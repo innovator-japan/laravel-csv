@@ -13,9 +13,30 @@ use InnovatorJapan\LaravelCsv\Contracts\ExportedData;
 abstract class AbstractCsv implements ExportedData
 {
     /**
+     * @var bool
+     */
+    protected $useBom = false;
+
+    /**
      * @var int
      */
     protected $chunkCount = 1000;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function useBom(): bool
+    {
+        return $this->useBom;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function header(): array
+    {
+        return [];
+    }
 
     /**
      * {@inheritdoc}

@@ -12,6 +12,16 @@ use Illuminate\Database\Query\Builder;
 interface ExportedData
 {
     /**
+     * @return bool
+     */
+    public function useBom(): bool;
+
+    /**
+     * @return array
+     */
+    public function header(): array;
+
+    /**
      * @return Builder
      */
     public function query(): Builder;
