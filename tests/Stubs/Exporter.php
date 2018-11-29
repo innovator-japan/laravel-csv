@@ -16,6 +16,22 @@ class Exporter implements ExportedData
     /**
      * {@inheritdoc}
      */
+    public function useBom(): bool
+    {
+        return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function header(): array
+    {
+        return [];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function query(): Builder
     {
         return User::query()->getQuery();
