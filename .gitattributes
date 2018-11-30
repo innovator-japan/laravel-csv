@@ -1,0 +1,15 @@
+* text=auto
+
+/.circleci          export-ignore
+/.coveralls.yml     export-ignore
+/.editorconfig      export-ignore
+/.gitattributes     export-ignore
+/.github            export-ignore
+/.gitignore         export-ignore
+/phpcs.xml          export-ignore
+/phpmd.xml          export-ignore
+/phpstan.src.neon   export-ignore
+/phpstan.tests.neon export-ignore
+/phpunit.xml        export-ignore
+/tests              export-ignore
+/README.md          export-ignore
