@@ -9,8 +9,8 @@
 - Wrapper around [League\Csv](https://github.com/thephpleague/csv)
 
 ## Requirements
-- **PHP 7.0.10** or later
-- **Laravel 5.5** or later
+- **PHP 7.1.3** or later
+- **Laravel 5.6** or later
 - mbstring extension
 
 ## Installation
