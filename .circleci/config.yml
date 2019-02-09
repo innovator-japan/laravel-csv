@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     working_directory: ~/repo
     docker:
       - image: circleci/php:7.1-cli
@@ -15,3 +15,8 @@ jobs:
           paths:
             - "~/.composer/cache"
       - run: composer ci
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
