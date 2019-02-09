@@ -14,7 +14,9 @@ use InnovatorJapan\LaravelCsv\Writer;
 class CsvServiceProvider extends ServiceProvider
 {
     /**
-     * {@inheritdoc}
+     * Register the service provider.
+     *
+     * @return void
      */
     public function register()
     {

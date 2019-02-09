@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <ruleset name="Custom_PHPMD">
   <description>Custom ruleset PHPMD</description>
+  <rule ref="rulesets/cleancode.xml">
+    <exclude name="StaticAccess" />
+  </rule>
   <rule ref="rulesets/codesize.xml" />
   <rule ref="rulesets/controversial.xml" />
   <rule ref="rulesets/design.xml" />
