@@ -22,7 +22,6 @@
     },
     "require-dev": {
         "orchestra/testbench": "^3.7",
-        "php-coveralls/php-coveralls": "^2.1",
         "phpmd/phpmd": "^2.6",
         "phpstan/phpstan": "^0.11.1",
         "phpstan/phpstan-phpunit": "^0.11.0",
@@ -60,21 +59,11 @@
         "phpunit": [
             "./vendor/bin/phpunit --colors=always"
         ],
-        "phpunit-ci": [
-            "./vendor/bin/phpunit --colors=always --coverage-clover=tests/build/clover.xml",
-            "./vendor/bin/php-coveralls"
-        ],
         "test": [
             "@phpcs",
             "@phpmd",
             "@phpstan",
             "@phpunit"
-        ],
-        "ci": [
-            "@phpcs",
-            "@phpmd",
-            "@phpstan",
-            "@phpunit-ci"
         ]
     },
     "config": {
